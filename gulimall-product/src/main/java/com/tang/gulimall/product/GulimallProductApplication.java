@@ -1,15 +1,15 @@
-package com.tang.gulimall.coupon;
+package com.tang.gulimall.product;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan("com.tang.gulimall.coupon.dao")
+@MapperScan("com.tang.gulimall.product.dao")
 @SpringBootApplication
-public class GulimallCouponApplication {
+public class GulimallProductApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GulimallCouponApplication.class, args);
+        SpringApplication.run(GulimallProductApplication.class, args);
     }
 
 }
