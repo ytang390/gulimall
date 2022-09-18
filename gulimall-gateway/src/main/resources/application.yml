@@ -1,0 +1,34 @@
+server:
+  port: 88
+spring:
+  application:
+    name: gulimall-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.56.10:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: gulimall-coupon
+          uri: lb://gulimall-coupon
+          predicates:
+            - Path=/coupon/**
+        - id: gulimall-member
+          uri: lb://gulimall-member
+          predicates:
+            - Path=/member/**
+        - id: gulimall-order
+          uri: lb://gulimall-order
+          predicates:
+            - Path=/order/**
+        - id: gulimall-product
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/product/**
+        - id: gulimall-ware
+          uri: lb://gulimall-ware
+          predicates:
+            - Path=/ware/**
